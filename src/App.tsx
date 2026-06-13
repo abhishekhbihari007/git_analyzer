@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { AnalyzedProfile } from './types.ts';
 import LoginScreen from './components/LoginScreen.tsx';
 import ProfileDetails from './components/ProfileDetails.tsx';
-import ApiDocs from './components/ApiDocs.tsx';
 import { 
   Github, LogOut, Search, Sparkles, Database, Code, 
   Layers, Terminal, RefreshCw, Key, HelpCircle, UserCheck, Check, Copy
@@ -237,24 +236,7 @@ export default function App() {
 
             {/* Middle Nav Links */}
             <nav className="hidden sm:flex space-x-1">
-              <button
-                onClick={() => { setSelectedProfile(null); setActiveTab('dashboard'); }}
-                className={`px-3 py-2 text-sm font-semibold rounded-xl transition-all cursor-pointer ${
-                  activeTab === 'dashboard' && !selectedProfile
-                    ? 'bg-slate-100 text-slate-900'
-                    : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
-                }`}
-              >
-                Dashboard
-              </button>
-              <button
-                onClick={() => { setSelectedProfile(null); setActiveTab('docs'); }}
-                className={`px-3 py-2 text-sm font-semibold rounded-xl transition-all cursor-pointer ${
-                  activeTab === 'docs' ? 'bg-slate-100 text-slate-900' : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
-                }`}
-              >
-                API Spec & Exports
-              </button>
+              {/* Only Dashboard remains, so we can just hide the nav or keep it empty */}
             </nav>
 
             {/* Profile Bar / Token Copier */}
@@ -330,8 +312,6 @@ export default function App() {
             profile={selectedProfile}
             onBack={() => setSelectedProfile(null)}
           />
-        ) : activeTab === 'docs' ? (
-          <ApiDocs />
         ) : (
           /* Dashboard Hub View */
           <div className="space-y-8">
