@@ -1,0 +1,6 @@
+{
+  "name": "GitHub Profile Analyzer API",
+  "description": "A full-stack Node.js + Express application that analyzes GitHub profiles with language aggregates, custom scores and summary reports, with a durable PostgreSQL database connection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
